@@ -1,0 +1,7 @@
+<!-- read-webconfig.shtml -->
+<!-- 
+    能够读取文件
+    参考：https://xz.aliyun.com/t/3019 
+-->
+<!--#include file="/web.config" -->
+
