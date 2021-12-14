@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unicode Encode JSP</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="page-header">
+                <h1>Unicode Encode
+                    <small>JSP File</small>
+                </h1>
+                <p>目前仅支持纯jsp代码格式，不能有额外字符，如：html、注释</p>
+            </div>
+            <div class="col-md-6">
+                <form role="form">
+                    <div class="form-group">
+                      <label for="code">代码</label>
+                      <textarea type="text" class="form-control" id="code" placeholder="请输入代码" rows="20"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form role="form">
+                    <div class="form-group">
+                      <label for="result_code">结果</label>
+                      <textarea type="text" class="form-control" id="result_code" readonly rows="20"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-12">
+                <button type="button" class="btn btn-default" id="handle">提交</button>
+            </div>
+        </div>
+    </div>
+<script>
+
+
+function left_zero_4(str) {
+    if (str != null && str != '' && str != 'undefined') {
+        if (str.length == 2) {
+            return '00' + str;
+        }
+    }
+    return str;
+}
+
+function unicode(str){
+    var value='';
+    for (var i = 0; i < str.length; i++) {
+        value += '\\u' + left_zero_4(parseInt(str.charCodeAt(i)).toString(16));
+    }
+    return value;
+}
+
+
+function trimCode(x) {
+  return x.replace(/^\s+|\s+$/gm,'');
+}
+ 
+
+    $("#handle").click(function(){
+        var code = $("#code").val();
+        var garbleCode = "";
+        if (code.length == 0){
+            alert("长度不够！");
+        }
+        code = trimCode(code)
+        codeBlocks = code.split("%>")
+       // console.log(codeBlocks[0])
+        
+        codeBlocks.forEach(element => {
+            if(element == ""){
+                return;
+            }
+            if(element.indexOf("<%@") == 0){
+                garbleCode += element + "%>";
+                return;
+            }
+            // 找到<%开头
+            indexFlag = element.indexOf("<%");
+            if(indexFlag == -1 || element.length < 5){
+                alert("数据解析错误！");
+            }
+            element = trimCode(element)
+            console.log(element[2] , " -> ", element)
+            switch(element[2]){
+                case '!':
+                    startFlag = "<%!";
+                    break;
+                case '=':
+                    startFlag = "<%=";
+                    break;
+                default:
+                    startFlag = "<%";
+            }
+            garbleCode += startFlag + unicode(element.substring(startFlag.length)) + "%>";
+        });
+        $("#result_code").val(garbleCode);
+    })
+</script>
+</body>
+</html>

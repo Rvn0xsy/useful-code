@@ -15,3 +15,10 @@
 - [Apache/htaccess.txt](./Other/Apache/htaccess.txt) Apache+php组合时，不能上传.php后缀可以试试这个
 - [IIS/web.config](./Other/IIS/web.config) 当存在任意文件上传时（文件名可控），可以用web.config设置当前目录解析格式。
 
+### Encoder
+
+![](./images/unicode-jsp.jpg)
+
+- [Encoder/unicode-jsp.html](./Encoder/unicode-jsp.html) :ram: Unicode编码JSP代码
+
+[在线地址](https://payloads.online/tools/unicode-jsp.html) :star:
