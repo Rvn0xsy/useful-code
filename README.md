@@ -8,7 +8,8 @@
 
 ### JAVA
 
-- [writefile.jsp](./JAVA/writefile.jsp) 主要用于绕过WAF进行文件上传，需在header头中指定绝对路径
+- [JAVA/writefile.jsp](./JAVA/writefile.jsp) 主要用于绕过WAF进行文件上传，需在header头中指定绝对路径
+- [JAVA/writefile-script.jsp](./JAVA/writefile-script.jsp) 如果限制了`<%`、`<%@`等字符，可以使用`<jsp:scriptlet>`标记。
 
 ### Other
 
@@ -19,6 +20,5 @@
 
 ![](./images/unicode-jsp.jpg)
 
-- [Encoder/unicode-jsp.html](./Encoder/unicode-jsp.html) :ram: Unicode编码JSP代码
+- [Encoder/unicode-jsp.html](./Encoder/unicode-jsp.html) :ram: Unicode编码JSP代码 [在线地址](https://payloads.online/tools/unicode-jsp.html) :star:
 
-[在线地址](https://payloads.online/tools/unicode-jsp.html) :star:
