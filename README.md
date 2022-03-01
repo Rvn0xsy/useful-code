@@ -16,6 +16,11 @@
 - [Apache/htaccess.txt](./Other/Apache/htaccess.txt) Apache+php组合时，不能上传.php后缀可以试试这个
 - [IIS/web.config](./Other/IIS/web.config) 当存在任意文件上传时（文件名可控），可以用web.config设置当前目录解析格式。
 
+### PHP
+
+- [PHP/write.php](./PHP/write.php) 主要用于文件写入
+
+
 ### Encoder
 
 ![](./images/unicode-jsp.jpg)
