@@ -13,6 +13,7 @@
 - [JAVA/script-engine-header.jsp](./JAVA/script-engine-header.jsp) 使用JAVA的ScriptEngine实现灵活的代码执行入口，输入点在Header头中，比普通的文件小马好用一些。
 - [JAVA/script-engine-body.jsp](./JAVA/script-engine-body.jsp) 使用JAVA的ScriptEngine实现灵活的代码执行入口，输入点在Body中，比普通的文件小马好用一些。
 - [JAVA/exec-command.js](./JAVA/exec-command.js) 使用JAVA的ScriptEngine实现灵活的代码执行入口，这个js是用于放置在Header中发送到服务器上执行命令的代码。
+- [JAVA/writefile-print.jsp](./JAVA/writefile-print.jsp) 使用`java.io.PrintWriter`可以跳过`new File`关键字写入文件。
 
 ### Other
 
