@@ -15,6 +15,8 @@
 - [JAVA/exec-command.js](./JAVA/exec-command.js) 使用JAVA的ScriptEngine实现灵活的代码执行入口，这个js是用于放置在Header中发送到服务器上执行命令的代码。
 - [JAVA/writefile-print.jsp](./JAVA/writefile-print.jsp) 使用`java.io.PrintWriter`可以跳过`new File`关键字写入文件。
 - [JAVA/jsp-expression-exec.jsp](./JAVA/jsp-expression-exec.jsp) 如果限制了`<%`、`<%@`、`<jsp:declaration>`、`<jsp:scriptlet>`等字符，可以使用expression表达式代替。
+- [JAVA/bypass-rasp-exec.jsp](./JAVA/bypass-rasp-exec.jsp) Bypass RASP检测命令执行的Webshell
+- [JAVA/bypass-rasp-writefile.jsp](./JAVA/bypass-rasp-writefile.jsp) Bypass RASP检测文件写入的Webshell
 
 
 ### Other
